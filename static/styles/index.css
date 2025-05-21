@@ -1,0 +1,99 @@
+/* body takes full height  */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Video background styling */
+        .background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Keep video behind all content */
+            object-fit: cover;
+        }
+
+        /* Content styling */
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1; /* Content above video */
+        }
+
+        h2 {
+            color: #4caf50;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            font-size: 1.1em;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .menu-container {
+            margin-top: 30px;
+        }
+
+        .menu-container a {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .menu-container button {
+            background-color: #2196F3;
+        }
+
+        .menu-container button:hover {
+            background-color: #1976D2;
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        .form-container input, .form-container textarea {
+            padding: 10px;
+            font-size: 1em;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container button {
+            background-color: #FF5722;
+            color: white;
+        }
+
+        .form-container button:hover {
+            background-color: #E64A19;
+        }

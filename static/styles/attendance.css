@@ -1,0 +1,181 @@
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e8f0fe;
+      margin: 0;
+      padding: 20px;
+    }
+    .wrapper {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .sidebar, .main-panel {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .logo {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+      margin-top: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    button {
+      background-color: #1976d2;
+      color: white;
+      font-size: 1em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #1565c0;
+    }
+    input, textarea {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    #loading, #result {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+    #loading { color: orange; display: none; }
+    .image-preview, .video-preview {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    .info-box {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #f1f8e9;
+      border-left: 5px solid #8bc34a;
+      border-radius: 5px;
+      font-size: 0.95em;
+      color: #33691e;
+    }
+    @media(max-width: 768px) {
+      .wrapper { grid-template-columns: 1fr; }
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+    }
+   
+    .recording-indicator {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: red;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 8px;
+      display: none;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .face-detected {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: green;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 8px;
+      display: none;
+    }
+.position-guide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 70%;
+  border: none;
+  pointer-events: none;
+  display: none;
+  z-index: 10;
+}
+
+/* Bold red corner indicators */
+.position-guide::before,
+.position-guide::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 6px solid red;
+}
+
+.position-guide::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.position-guide::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.position-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  text-align: center;
+  width: 100%;
+}
+
+/* Pulsing effect for attention */
+@keyframes corner-pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.position-guide::before,
+.position-guide::after {
+  animation: corner-pulse 1.5s infinite;
+}
+  .position-guide::before,
+  .position-guide::after {
+    border-color: var(--corner-color, red);
+  }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Facial Attendance System</title>
+    <link rel="stylesheet" href="static/styles/index.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop class="background-video">
+        <source src="static/5a3a12040601c8b3becdcabf447e8ff6.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Content -->
+    <div class="content">
+        <h2>Welcome to the AI Based Facial Recognition Attendance System</h2>
+        <p>Select an option below:</p>
+
+        <div class="menu-container">
+            <a href="/register"><button>Attendee Registration </button></a>
+            <a href="/attendance"><button>Open Attendance</button></a>
+            <a href="/request_leave"><button>Request Leave</button></a>
+            <a href="/report_issue"><button>Report Issue</button></a>
+            <a href="/training_request"><button>Request Training</button></a>
+            <a href="/tracking"><button class="tracking-button">Tracking</button></a>
+
+        </div>
+
+        <!-- Forms -->
+        <div class="form-container" id="leave-form" style="display:none;">
+            <h3>Request Leave</h3>
+            <form action="/submit_leave_request" method="POST">
+                <input type="text" name="employee_name" placeholder="Enter your name" required>
+                <input type="date" name="start_date" required>
+                <input type="date" name="end_date" required>
+                <textarea name="reason" placeholder="Reason for leave" required></textarea>
+                <button type="submit">Submit Leave Request</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="issue-form" style="display:none;">
+            <h3>Report an Issue</h3>
+            <form action="/submit_issue_report" method="POST">
+                <input type="text" name="employee_name" placeholder="Enter your name" required>
+                <textarea name="issue_description" placeholder="Describe the issue" required></textarea>
+                <button type="submit">Submit Issue Report</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="training-form" style="display:none;">
+            <h3>Request Training</h3>
+            <form action="/submit_training_request" method="POST">
+                <input type="text" name="employee_name" placeholder="Enter your name" required>
+                <input type="text" name="training_topic" placeholder="Training Topic" required>
+                <textarea name="training_reason" placeholder="Why do you need this training?" required></textarea>
+                <button type="submit">Submit Training Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formId) {
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => form.style.display = 'none');
+            const formToShow = document.getElementById(formId);
+            if (formToShow) {
+                formToShow.style.display = 'block';
+            }
+        }
+
+        document.querySelector('[href="/request_leave"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleForm('leave-form');
+        });
+
+        document.querySelector('[href="/report_issue"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleForm('issue-form');
+        });
+
+        document.querySelector('[href="/training_request"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleForm('training-form');
+        });
+    </script>
+
+</body>
+</html>

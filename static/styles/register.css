@@ -1,0 +1,129 @@
+/* Set background color and font styles */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Container to center the form */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Ensure it doesn't exceed 400px */
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px; /* Add margin for better spacing */
+    overflow-y: auto; /* Make content scrollable if it overflows */
+    max-height: 80vh; /* Limit the container height */
+}
+
+/* Heading Style */
+h2 {
+    color: #4caf50;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Form Field Styling */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* Responsive input fields */
+input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the width */
+    font-size: 1em;
+    background-color: #fafafa;
+}
+
+/* Style for the file input */
+input[type="file"] {
+    padding: 5px;
+}
+
+/* Button Style */
+button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.1em;
+    padding: 12px 20px;
+    width: 100%; /* Full width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Add some spacing between form elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Style for the footer */
+footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Footer links */
+footer a {
+    text-decoration: none;
+    color: #4caf50;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the divider between Register and Delete sections */
+.border-divider {
+    height: 6px;
+    background-color: red;
+    margin: 30px 0;
+}
+
+/* Make the form responsive on smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        max-height: 90vh; /* Increase the container height for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    input, button {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}

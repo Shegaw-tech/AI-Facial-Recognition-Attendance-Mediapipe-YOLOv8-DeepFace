@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New User</title>
+    <link rel="stylesheet" href="static/styles/register.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register New attendee</h2>
+        <form action="/register" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <input type="text" name="occupation" id="occupation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ID">ID:</label>
+                <input type="number" name="ID" id="ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="photo">Upload Photo:</label>
+                <input type="file" name="photo" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    <div class="border-divider"></div>
+        <h2>Delete Attendee</h2>
+        <form method="POST" action="{{ url_for('delete_user_by_name_route') }}">
+            <label for="delete_name">Enter Name to Delete:</label>
+            <input type="text" id="delete_name" name="name" placeholder="Enter name to delete" required><br><br>
+            <button type="submit">Delete User</button>
+        </form>
+
+
+    </div>
+    <footer>
+        <p>Already have an account? <a href="/">Go to Mark Attendance</a></p>
+    </footer>
+</body>
+</html>

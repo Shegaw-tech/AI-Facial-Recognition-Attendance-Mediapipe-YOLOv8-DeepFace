@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Attendance</title>
+  <link rel="stylesheet" href="static/styles/attendance.css">
+</head>
+<body>
+<div class="wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img id="logoImage" src="/static/Screenshot 2025-04-05 162323.png" alt="Logo" class="logo">
+    <input type="file" id="logoInput" accept="image/*" onchange="changeLogo()" style="display:none;">
+
+    <div class="section-title">AIM</div>
+    <p id="aimText">
+      To implement a secure, efficient, and AI-powered facial attendance system that promotes accuracy and accountability.
+    </p>
+    <textarea id="aimInput" rows="4" style="display:none;"></textarea>
+
+    <div class="section-title">Month / Week</div>
+    <p><strong>Month:</strong> <span id="month"></span> <span id="year"></span></p>
+    <p><strong>Week:</strong> <span id="week"></span></p>
+    <div class="section-title">Organization</div>
+    <p id="orgName">Industrial Parks Development Corporation</p>
+    <input type="text" id="orgInput" style="display:none;">
+
+    <button onclick="toggleEdit()">Edit</button>
+  </div>
+
+  <!-- Main Panel -->
+  <div class="main-panel">
+    <h2>Mark Attendance</h2>
+    <div class="video-container">
+      <video id="webcam" class="video-preview" autoplay muted></video>
+      <div class="position-guide" id="positionGuide">
+        <div class="position-text">Position your face here</div>
+        </div>
+      <div id="recordingIndicator" class="recording-indicator">● Video Recording...</div>
+      <div id="faceDetected" class="face-detected">✓ Please Position your face clearly</div>
+    </div>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <button id="manualCaptureBtn" onclick="captureAndSend()">Please Position your face clearly</button>
+
+    <p id="loading">Please wait, capturing face...</p>
+    <p id="result"></p>
+
+    <div class="section-title">Recognized Image</div>
+    <img id="recognizedImage" src="/static/faces/captured.jpg" alt="Recognized Face" class="image-preview" style="display:none;">
+
+    <div class="info-box">
+      Attendance is recorded automatically once your face is recognized. Please position your face clearly in the frame.
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='styles/attend.js') }}"></script>
+</body>
+</html>

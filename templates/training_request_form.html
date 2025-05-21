@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Request</title>
+</head>
+<body>
+    <h2>Training Request Form</h2>
+    <form method="POST" action="/submit_training_request">
+        <label for="employee_name">Employee Name:</label>
+        <input type="text" id="employee_name" name="employee_name" required><br><br>
+
+        <label for="training_topic">Training Topic:</label>
+        <input type="text" id="training_topic" name="training_topic" required><br><br>
+
+        <label for="training_reason">Reason for Training:</label>
+        <textarea id="training_reason" name="training_reason" required></textarea><br><br>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>
